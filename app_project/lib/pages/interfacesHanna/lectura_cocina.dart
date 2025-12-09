@@ -14,7 +14,7 @@ class LecturaCocina extends StatelessWidget {
       currentRoute: routeName,
       nextRoute: 'lectura_bano', // Siguiente: Baño
       previousRoute: null, // Primera página
-      backgroundImagePath: 'assets/lecturaHanna/fondoCocina.png',
+      backgroundImagePath: 'images/lecturaHanna/fondoCocina.png',
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

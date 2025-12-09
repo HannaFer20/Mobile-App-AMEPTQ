@@ -14,6 +14,7 @@ class LecturaPatio extends StatelessWidget {
       currentRoute: routeName,
       nextRoute: null, // ÚLTIMA PÁGINA: Regresa al menú
       previousRoute: 'lectura_sala', // Anterior: Sala
+      backgroundImagePath: 'images/lecturaHanna/fondoPatio.png',
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -47,7 +48,7 @@ class LecturaPatio extends StatelessWidget {
               // Imagen Placeholder
               Expanded(
                 flex: 2,
-                child: Image.asset(''),
+                child: Image.asset('images/lecturaHanna/imagenPatio.png'),
               ),
             ],
           ),
@@ -68,7 +69,7 @@ class LecturaPatio extends StatelessWidget {
               // Imagen Placeholder
               Expanded(
                 flex: 2,
-                child: Image.asset(''),
+                child: Image.asset('images/lecturaHanna/imagenBoilerPrendido.png'),
               ),
               const SizedBox(width: 10),
               // Columna de Texto

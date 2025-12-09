@@ -35,22 +35,6 @@ class ReadingScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-          
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              height: screenHeight * 0.25,
-              decoration: const BoxDecoration(
-                color: Color(0xFF90EE90), // Verde césped
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(500),
-                  topRight: Radius.circular(500),
-                ),
-              ),
-            ),
-          ),
 
           // 2. Cabecera Fija (Color y Título)
           Positioned(
@@ -72,7 +56,7 @@ class ReadingScreen extends StatelessWidget {
                         onPressed: () {
                           // Navega a la ruta anterior o simplemente regresa si no hay ruta anterior definida
                           if (previousRoute != null) {
-                            Navigator.pushReplacementNamed(context, previousRoute!);
+                            Navigator.pushNamed(context, '/menu');
                           } else {
                             // Si es la primera, puede regresar a la ruta principal o al menú
                             Navigator.pop(context);

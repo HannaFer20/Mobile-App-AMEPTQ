@@ -1,7 +1,11 @@
+import 'package:app_project/pages/interfacesDelia/main_menu.dart';
 import 'package:flutter/material.dart';
 
 class TerminosScreen extends StatelessWidget {
-  const TerminosScreen({super.key});
+  const TerminosScreen({super.key, required this.childName});
+
+  static const String routeName = '/terminos/';
+  final String childName;
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +104,11 @@ class TerminosScreen extends StatelessWidget {
                               elevation: 4,
                             ),
                             onPressed: () {
-                              Navigator.pushNamed(context, '/menu');
+                              Navigator.pushReplacementNamed(
+                                context, 
+                                MainMenu.routeName,
+                                arguments: childName,
+                              );
                             },
                             child: const Text(
                               'ACEPTO LOS TÉRMINOS Y CONDICIONES',

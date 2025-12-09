@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController _nameController = TextEditingController();
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,14 +101,15 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child: const TextField(
-                        decoration: InputDecoration(
+                      child: TextField(
+                        controller: _nameController,
+                        decoration: const InputDecoration(
                           hintText: 'Nombre',
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.symmetric(vertical: 10),
                         ),
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 20),
+                        style: const TextStyle(fontSize: 20),
                       ),
                     ),
                     const SizedBox(height: 40),
@@ -103,7 +117,7 @@ class LoginScreen extends StatelessWidget {
                     // BOTÓN JUGAR
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/terminos');
+                        Navigator.pushNamed(context, '/terminos/');
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.red, // Fondo del botón rojo

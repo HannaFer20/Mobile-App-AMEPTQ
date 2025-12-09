@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import '../interfacesDaniela/settings_base.dart';
 
 
 class MainMenu extends StatelessWidget {
+  static const String routeName = '/main_menu'; // Define la ruta para usarla en login
+  final String childName;
+
+  const MainMenu({super.key, required this.childName});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +57,7 @@ class MainMenu extends StatelessWidget {
                       ),
                       SizedBox(width: 10),
                       Text(
-                        'Niño',
+                        childName,
                         style: TextStyle(
                           fontSize: 19,
                           fontWeight: FontWeight.bold,
@@ -406,7 +412,11 @@ class MainMenu extends StatelessWidget {
                   // Icono 3
                   GestureDetector(
                     onTap: () {
-                      print('sirve el de configuracion');
+                      Navigator.pushNamed(
+                        context, 
+                        'settings_base',
+                        arguments: childName,
+                      );
                     },
                     child: Container(
                       width: 50,

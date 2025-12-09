@@ -14,6 +14,7 @@ class LecturaSala extends StatelessWidget {
       currentRoute: routeName,
       nextRoute: 'lectura_patio', // Siguiente: Patio
       previousRoute: 'lectura_recamara', // Anterior: Recámara
+      backgroundImagePath: 'images/lecturaHanna/fondoSala.png',
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -47,7 +48,7 @@ class LecturaSala extends StatelessWidget {
               // Imagen Placeholder
               Expanded(
                 flex: 2,
-                child: Image.asset(''),
+                child: Image.asset('images/lecturaHanna/imagenSala.png'),
               ),
             ],
           ),
@@ -73,7 +74,7 @@ class LecturaSala extends StatelessWidget {
               // Imagen Placeholder
               Expanded(
                 flex: 2,
-                child: Image.asset(''),
+                child: Image.asset('images/lecturaHanna/imagenSalaPeligro.png'),
               ),
               const SizedBox(width: 10),
               // Columna de Texto

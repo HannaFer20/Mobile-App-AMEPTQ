@@ -10,6 +10,7 @@ import 'pages/interfacesHanna/lectura_patio.dart';
 import 'pages/interfacesHanna/lectura_sala.dart';
 import 'pages/interfacesDelia/main_menu.dart';
 import 'pages/interfacesDelia/terminos.dart';
+import 'pages/interfacesDaniela/settings_base.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,8 +32,19 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => AppTitleScreen(),
         '/login': (context) => LoginScreen(),
-        '/terminos': (context) => TerminosScreen(),
-        '/menu': (context) => MainMenu(),
+        TerminosScreen.routeName: (context) {
+          // El nombre viene desde Login
+          final args = ModalRoute.of(context)?.settings.arguments as String? ?? 'Niño';
+          return TerminosScreen(childName: args);
+        },
+        MainMenu.routeName: (context) {
+          final args = ModalRoute.of(context)?.settings.arguments as String? ?? 'Niño';
+          return MainMenu(childName: args);
+        },
+        SettingsBase.routeName: (context) {
+          final args = ModalRoute.of(context)?.settings.arguments as String? ?? 'Niño';
+          return SettingsBase(childName: args);
+        },
         LecturaCocina.routeName: (context) => const LecturaCocina(),
         LecturaBano.routeName: (context) => const LecturaBano(),
         LecturaElectrico.routeName: (context) => const LecturaElectrico(),

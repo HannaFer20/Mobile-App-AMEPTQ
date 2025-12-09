@@ -14,6 +14,7 @@ class LecturaElectrico extends StatelessWidget {
       currentRoute: routeName,
       nextRoute: 'lectura_recamara', // Siguiente: Recámara
       previousRoute: 'lectura_bano', // Anterior: Baño
+      backgroundImagePath: 'images/lecturaHanna/fondoElectrico.png',
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -47,7 +48,7 @@ class LecturaElectrico extends StatelessWidget {
               // Imagen Placeholder
               Expanded(
                 flex: 2,
-                child: Image.asset(''),
+                child: Image.asset('images/lecturaHanna/imagenCablePeligro.png'),
               ),
             ],
           ),
@@ -68,7 +69,7 @@ class LecturaElectrico extends StatelessWidget {
               // Imagen Placeholder
               Expanded(
                 flex: 2,
-                child: Image.asset(''),
+                child: Image.asset('images/lecturaHanna/imagenCable.png'),
               ),
               const SizedBox(width: 10),
               // Columna de Texto

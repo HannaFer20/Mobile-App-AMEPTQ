@@ -10,10 +10,11 @@ class LecturaBano extends StatelessWidget {
   Widget build(BuildContext context) {
     return ReadingScreen(
       title: 'Baño',
-      headerColor: const Color(0xFF4C98D4), // Azul
+      headerColor: const Color(0xFF4C98D4),
       currentRoute: routeName,
       nextRoute: 'lectura_electrico', // Siguiente: Eléctrico
-      previousRoute: 'lectura_cocina', // Anterior: Cocina
+      previousRoute: 'lectura_cocina',
+      backgroundImagePath: 'images/lecturaHanna/fondoBano.png', // Anterior: Cocina
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -38,7 +39,7 @@ class LecturaBano extends StatelessWidget {
               // Imagen Placeholder
               Expanded(
                 flex: 2,
-                child: Image.asset(''),
+                child: Image.asset('images/lecturaHanna/imagenTina.png'),
               ),
               const SizedBox(width: 10),
               // Columna de Texto
@@ -82,7 +83,7 @@ class LecturaBano extends StatelessWidget {
               // Imagen Placeholder
               Expanded(
                 flex: 2,
-                child: Image.asset(''),
+                child: Image.asset('images/lecturaHanna/imagenHumoTina.png'),
               ),
             ],
           ),

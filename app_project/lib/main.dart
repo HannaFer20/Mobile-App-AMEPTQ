@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'pages/juegoHannia/game_level_screen.dart'; 
 import 'pages/juegoHannia/level_data.dart';
 import 'pages/juegoHannia/app_colors.dart';
+import 'pages/juegoHannia/winner_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -126,6 +127,33 @@ class MyApp extends StatelessWidget {
                 ],
               ),
             ),
+
+            // ---------------------------------------------------------
+        // RUTA NIVEL 3: PATIO
+        // ---------------------------------------------------------
+        '/patio': (context) => GameLevelScreen(
+              levelData: LevelData(
+                id: '3',
+                name: 'patio',
+                color: const Color.fromARGB(255, 152, 198, 120),
+                scenarioImage: 'images/juegoHannia/escena_patio.png', 
+                correctOptionAsset: '../images/juegoHannia/botonCubeta.png', 
+                successMessage: "¡Excelente! El agua es perfecta para apagar una fogata.",
+                failureMessage: "¡Oh, no! ¡Cuidado! intentalo de nuevo con algo seguro",
+                nextLevelRoute: '/winner',
+                optionAssets: [
+                  '../images/juegoHannia/botonSoplar.png',
+                  '../images/juegoHannia/botonCubeta.png', 
+                  '../images/juegoHannia/botonRamas.png',
+                ],
+              ),
+            ),
+
+    // ---------------------------------------------------------
+    // RUTA FINAL: PANTALLA GANADORA
+    // ---------------------------------------------------------
+    '/winner': (context) => const WinnerScreen(),
+
       },
     );
   }

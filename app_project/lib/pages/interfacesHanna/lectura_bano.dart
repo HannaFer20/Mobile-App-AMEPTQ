@@ -14,7 +14,7 @@ class LecturaBano extends StatelessWidget {
       currentRoute: routeName,
       nextRoute: 'lectura_electrico', // Siguiente: Eléctrico
       previousRoute: 'lectura_cocina',
-      backgroundImagePath: 'images/lecturaHanna/fondoBano.png', // Anterior: Cocina
+      backgroundImagePath: 'images/lecturaHanna/fondoBano.png', // Anterior: Cocina      
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

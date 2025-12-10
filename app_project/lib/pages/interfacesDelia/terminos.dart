@@ -13,7 +13,7 @@ class TerminosScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/imgTerminos.png'),
+            image: AssetImage('images/interfazDelia/fondoBase.png'),
             fit: BoxFit.cover,
           ),
         ),

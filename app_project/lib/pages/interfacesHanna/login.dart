@@ -18,30 +18,28 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Media Query para obtener el tamaño de la pantalla
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      // Se reutiliza el fondo de la pantalla anterior para mantener la consistencia
       body: Stack(
         children: <Widget>[
-          // Fondo de cielo y césped
+          // Fondo de cielo y césped (Mismo diseño que AppTitleScreen)
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Color(0xFF87CEEB), // Azul cielo claro
-                  Color(0xFFFFFFFF), // Blanco intermedio
-                  Color(0xFF90EE90), // Verde césped claro
+                  Color(0xFF87CEEB), 
+                  Color(0xFFB0E0E6), 
+                  Color(0xFF80C080), 
                 ],
                 stops: [0.0, 0.75, 1.0],
               ),
             ),
           ),
 
-          // Nubes y colinas (Placeholder simple)
+          // Colinas de Césped (Mismo diseño que AppTitleScreen)
           Positioned(
             bottom: 0,
             left: 0,
@@ -49,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Container(
               height: screenHeight * 0.25,
               decoration: const BoxDecoration(
-                color: Color(0xFF90EE90), // Verde césped
+                color: Color(0xFF55AE55), 
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(500),
                   topRight: Radius.circular(500),
@@ -57,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-
+          
           // Contenido principal: Logo, Input y Botón
           Center(
             child: Padding(
@@ -66,73 +64,88 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    // LOGO SUPERIOR (Placeholder Image.asset vacío)
-                    Container(
-                      width: 300,
-                      height: 250,
-                      margin: const EdgeInsets.only(bottom: 60),
-                      // **Placeholder del Logo**
-                      child: Image.asset('images/lecturaHanna/logo.png'), // Asume que tienes esta carpeta
-                    ),
-
-                    // ETIQUETA "Nombre del niño"
+                    // Título o instrucción amigable
                     const Text(
-                      'Nombre del niño',
+                      '¡Hola! ¿Cuál es tu nombre?',
                       style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black87,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFFE44A29), // Rojo vibrante
+                        shadows: [Shadow(blurRadius: 1, color: Colors.black38, offset: Offset(1, 1))]
                       ),
+                      textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 50),
 
-                    // CAMPO DE TEXTO
+                    // CAMPO DE TEXTO MEJORADO (Estilo de "Nube" o Cartel)
                     Container(
+                      width: MediaQuery.of(context).size.width * 0.75,
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Colors.grey.shade300),
-                        boxShadow: [
+                        color: Colors.white, // Fondo blanco para escribir
+                        borderRadius: BorderRadius.circular(30),
+                        border: Border.all(
+                          width: 4,
+                          color: const Color(0xFF87CEEB), // Borde azul claro
+                        ),
+                        boxShadow: const [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            blurRadius: 5,
-                            offset: const Offset(0, 5),
+                            color: Colors.black26,
+                            blurRadius: 10,
+                            offset: Offset(0, 5),
                           ),
                         ],
                       ),
                       child: TextField(
                         controller: _nameController,
                         decoration: const InputDecoration(
-                          hintText: 'Nombre',
+                          hintText: 'Escribe aquí tu nombre',
                           border: InputBorder.none,
-                          contentPadding: EdgeInsets.symmetric(vertical: 10),
+                          contentPadding: EdgeInsets.symmetric(vertical: 15),
                         ),
                         textAlign: TextAlign.center,
-                        style: const TextStyle(fontSize: 20),
+                        style: const TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF333333)
+                        ),
                       ),
                     ),
-                    const SizedBox(height: 40),
+                    const SizedBox(height: 60),
 
-                    // BOTÓN JUGAR
+                    // BOTÓN JUGAR (Manteniendo el estilo pop-out amarillo)
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/terminos/');
+                        final name = _nameController.text.trim().isEmpty ? 'Niño' : _nameController.text.trim();
+                        // Asumo que la ruta debe recibir el argumento del nombre
+                        Navigator.pushNamed(
+                          context, 
+                          '/terminos/',
+                          arguments: name
+                        );
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red, // Fondo del botón rojo
-                        padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 15),
+                        backgroundColor: const Color(0xFFF0C419), // Amarillo brillante
+                        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
+                          side: const BorderSide(color: Color(0xFFC0702D), width: 6),
                         ),
-                        elevation: 10,
+                        elevation: 15,
                       ),
                       child: const Text(
-                        'JUGAR',
+                        '¡VAMOS!', // Texto más directo
                         style: TextStyle(
-                          fontSize: 28,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 32,
+                          color: Color(0xFFE44A29),
+                          fontWeight: FontWeight.w900,
+                           shadows: [
+                            Shadow(
+                              blurRadius: 2.0, 
+                              color: Colors.black38, 
+                              offset: Offset(2, 2)
+                            )
+                          ]
                         ),
                       ),
                     ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../interfacesDaniela/settings_base.dart';
 
-
 class MainMenu extends StatelessWidget {
   static const String routeName = '/main_menu'; // Define la ruta para usarla en login
   final String childName;
@@ -186,7 +185,7 @@ class MainMenu extends StatelessWidget {
                                     Container(
                                       padding: EdgeInsets.all(12),
                                       child: Text(
-                                        'Lección',
+                                        'Aprende de los peligros en casa',
                                         style: TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
@@ -203,7 +202,7 @@ class MainMenu extends StatelessWidget {
                           Expanded(
                             child: GestureDetector(
                               onTap: () {
-                                print('sirve juegos 3');
+                                Navigator.pushNamed(context, '/trivia_cocina');
                               },
                               child: Container(
                                 margin: EdgeInsets.only(top: 10),
@@ -236,7 +235,7 @@ class MainMenu extends StatelessWidget {
                                     Container(
                                       padding: EdgeInsets.all(12),
                                       child: Text(
-                                        'juegos3',
+                                        'Trivia',
                                         style: TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
@@ -261,7 +260,7 @@ class MainMenu extends StatelessWidget {
                           Expanded(
                             child: GestureDetector(
                               onTap: () {
-                                print('sirve juegos 2');
+                                Navigator.pushNamed(context, '/juego_cocina');
                               },
                               child: Container(
                                 margin: EdgeInsets.only(bottom: 10),
@@ -294,7 +293,7 @@ class MainMenu extends StatelessWidget {
                                     Container(
                                       padding: EdgeInsets.all(12),
                                       child: Text(
-                                        'juegos2',
+                                        '¡Peligros en la cocina!',
                                         style: TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
@@ -311,7 +310,7 @@ class MainMenu extends StatelessWidget {
                           Expanded(
                             child: GestureDetector(
                               onTap: () {
-                                print('sirve juegos 4');
+                                Navigator.pushNamed(context, '/juegoE');
                               },
                               child: Container(
                                 margin: EdgeInsets.only(top: 10),
@@ -344,7 +343,7 @@ class MainMenu extends StatelessWidget {
                                     Container(
                                       padding: EdgeInsets.all(12),
                                       child: Text(
-                                        'juegos4',
+                                        '¡Evita el fuego!',
                                         style: TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,

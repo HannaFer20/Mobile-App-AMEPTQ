@@ -56,7 +56,7 @@ class ReadingScreen extends StatelessWidget {
                         onPressed: () {
                           // Navega a la ruta anterior o simplemente regresa si no hay ruta anterior definida
                           if (previousRoute != null) {
-                            Navigator.pushNamed(context, '/menu');
+                            Navigator.pushNamed(context, '/main_menu');
                           } else {
                             // Si es la primera, puede regresar a la ruta principal o al menú
                             Navigator.pop(context);
@@ -156,7 +156,7 @@ class ReadingScreen extends StatelessWidget {
                             // Última página: Regresar a la ruta principal/menú
                             icon: const Icon(Icons.home, color: Colors.white),
                             onPressed: () {
-                              Navigator.pushNamed(context, '/menu');
+                              Navigator.pushNamed(context, '/main_menu');
                             },
                           )
                         : IconButton(

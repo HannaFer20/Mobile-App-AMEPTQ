@@ -11,6 +11,13 @@ import 'pages/interfacesHanna/lectura_sala.dart';
 import 'pages/interfacesDelia/main_menu.dart';
 import 'pages/interfacesDelia/terminos.dart';
 import 'pages/interfacesDaniela/settings_base.dart';
+import 'pages/juegoHannia/nivel1/nivel_1_Cocina.dart';
+import 'pages/juegoHannia/nivel1/cocina_correcto.dart';
+import 'pages/juegoHannia/nivel1/cocina_incorrecto.dart';
+import 'pages/juegoMario/kitchen_screen.dart';
+import 'pages/juegoMario/bear_care_screen.dart';
+import 'pages/juegoEmiliano/game1.dart';
+import 'pages/juegoEmiliano/game2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +39,13 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => AppTitleScreen(),
         '/login': (context) => LoginScreen(),
+        '/trivia_cocina': (context) => CocinaScreen(),
+        '/success1H': (context) => SuccessScreen(),
+        '/fail1H': (context) => ErrorScreen(),
+        '/juego_cocina': (context) => KitchenScreen(),
+        '/juego_oso': (context) => BearCareScreen(),
+        '/juegoE': (context) => GamePage(),
+        '/juegoE1': (context) => CardGame(),
         TerminosScreen.routeName: (context) {
           // El nombre viene desde Login
           final args = ModalRoute.of(context)?.settings.arguments as String? ?? 'Niño';
